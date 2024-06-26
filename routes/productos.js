@@ -1,8 +1,13 @@
 const express = require('express')
 const router = express.Router()
 
-router.get('/',(req,res) =>{
-    res.json({
-        message: 'Hola desde la ruta de usuarios'
-    })
-})
+const productController = require('../controller/productController')
+
+router.get('/',productController.ObtenerTodosLosProductos)
+router.get('/:id',productController.ObtenerProductoPorId)
+router.put('/:id',productController.RestarStockPorProducto)
+router.post('/',productController.AgregarProducto)
+router.put('/:id',productController.EliminarProducto)
+router.put('/:id',productController.ActualizarStockPorProducto)
+
+module.exports = router
