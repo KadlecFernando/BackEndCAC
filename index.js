@@ -5,18 +5,17 @@ const app = express()
 const PORT = process.env.PORT || 8080
 const productosRouter = require('./routes/productos')
 
-app.get('/',(req,res) =>{
-    console.log('Esto tiene que salir en la consola')
-    res.send('Hola estamos probando el servidor con nodeman')
-})
+// app.get('/',(req,res) =>{
+//     console.log('Esto tiene que salir en la consola')
+//     res.send('Hola estamos probando el servidor con nodeman')
+// })
+
+app.use('/productos',productosRouter)
 
 app.listen(PORT,()=>{
     console.log(`Escuchando desde el servidor http://localhost:${PORT}`)
 })
 
-app.use(express.json())
-
-app.use('/productos',productosRouter)
 
 
 
