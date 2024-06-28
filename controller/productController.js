@@ -39,7 +39,7 @@ const RestarStockPorProducto = (req,res) =>{
 const AgregarProducto = (req,res) =>{
     const {descripcion,precio,cantidadStock,idTipo} = req.body
     const SQL = "INSERT INTO productos (descripcion,precio,cantidadStock,idTipo)" +
-                              " VALUES (?,?,?,?,?)"
+                              " VALUES (?,?,?,?)"
 
     db.query(SQL,[descripcion,precio,cantidadStock,idTipo],(err,result)=>{
         if (err) throw err
@@ -66,7 +66,7 @@ const EliminarProducto = (req,res) =>{
 const ActualizarStockPorProducto = (req,res) =>{
     const {id} = req.params
     const {cantComprada} = req.body
-    const SQL = "UPDATE productos SET cantidadStock = cantidadStock + ? WHERE idProducto = ?"
+    const SQL = "UPDATE productos SET cantidadStock = (cantidadStock + ?) WHERE idProducto = ?"
     db.query(SQL,[cantComprada,id],(err,result) =>{
         if (err) throw err
 
