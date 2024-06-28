@@ -40,8 +40,22 @@ const ObtenerMensajesSemanaAnterior = (req,res) =>{
     }) 
 }
 
+const ObtenerMensajesDetalle = (req,res) =>{
+    const SQL = "SELECT men.mensaje, per.nombre, per.apellido, per.mail, per.whatsapp" +
+                "  FROM mensajes men" +
+                "       LEFT JOIN personas per ON per.idPersona = men.idPersona" +
+                " WHERE per.idPersona = 1;"
+    
+    db.query(SQL,(err,result) =>{
+        if (err) throw err
+
+        res.json(result)
+    })
+}
+
 module.exports = {
     AgregarMensaje,
     ObtenerMensajes,
-    ObtenerMensajesSemanaAnterior
+    ObtenerMensajesSemanaAnterior,
+    ObtenerMensajesDetalle
 }

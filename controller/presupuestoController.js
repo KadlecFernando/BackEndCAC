@@ -20,6 +20,7 @@ const AgregarPresupuesto = (req,res) =>{
     })
 }
 
+
 //----------- Para admin ----------//
 
 const ObtenerPresupuestos = (req,res) =>{
@@ -43,8 +44,23 @@ const ObtenerPresupuestosSemanaAnterior = (req,res) =>{
     }) 
 }
 
+const ObtenerPresupuestosDetalle = (req,res) =>{
+
+    const SQL = "SELECT pre.estilo, pre.referencia, pre.zonaCuerpo, pre.fecha, per.nombre, per.apellido, per.mail, per.whatsapp" +
+                "  FROM presupuestos pre" +
+                "       LEFT JOIN personas per ON per.idPersona = pre.idPersona" +
+                " WHERE per.idPersona = 1;"
+    
+    db.query(SQL,(err,result) =>{
+        if (err) throw err
+
+        res.json(result)
+    })
+}
+
 module.exports = {
     AgregarPresupuesto,
     ObtenerPresupuestos,
-    ObtenerPresupuestosSemanaAnterior
+    ObtenerPresupuestosSemanaAnterior,
+    ObtenerPresupuestosDetalle
 }
