@@ -11,7 +11,7 @@ router.post('/',presupuestoController.AgregarPresupuesto)
 
 router.get('/totalPresupuestos',presupuestoController.ObtenerPresupuestos)
 router.get('/',presupuestoController.ObtenerPresupuestosSemanaAnterior)
-
+router.get('/detallePresupuestos',presupuestoController.ObtenerPresupuestosDetalle)
 
 
 module.exports = router

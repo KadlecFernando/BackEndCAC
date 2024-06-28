@@ -11,6 +11,7 @@ router.post('/', mensajeController.AgregarMensaje)
 
 router.get('/totalMensajes',mensajeController.ObtenerMensajes)
 router.get('/',mensajeController.ObtenerMensajesSemanaAnterior)
+router.get('/detalleMensajes',mensajeController.ObtenerMensajesDetalle)
 
 
 module.exports = router
