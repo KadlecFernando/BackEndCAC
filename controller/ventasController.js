@@ -1,10 +1,10 @@
-const ventasRoutes = require('./routes/ventasRoutes')
+const db = require('../database/db')
 
 //--------- agregar una venta ----------- //
 
 const AgregarVenta = (req, res) => {
     const { idProducto, cantidadVendida } = req.body;
-    const SQL = "INSERT INTO ventas (idProducto, cantidadVendida) VALUES (?, ?)";
+    const SQL = "INSERT INTO ventas (idProducto, cantidadVendida,Fecha) VALUES (?, ?, NOW())";
 
     db.query(SQL, [idProducto, cantidadVendida], (err, result) => {
         if (err) throw err;
@@ -34,13 +34,18 @@ const ObtenerVentasSemanaAnterior = (req, res) => {
         if (err) throw err;
 
         res.json(result);
-    });
+    })
 };
+
 // ----------------mostrar detalle de venta -----------------//
 const ObtenerVentasDetalle = (req, res) => {
-    const SQL = `SELECT v.idVenta, v.cantidadVendida, p.nombreProducto, p.precio 
-                 FROM ventas v 
-                 LEFT JOIN productos p ON v.idProducto = p.idProducto`;
+    const SQL = "SELECT v.idVenta," +
+                "       p.descripcion," +
+                "       v.cantidadVendida," +
+                "       p.precio," +
+                "      (p.precio * v.CantidadVendida) AS Ganancia" + 
+                "  FROM ventas v" +
+                "      LEFT JOIN productos p ON v.idProducto = p.idProducto";
 
     db.query(SQL, (err, result) => {
         if (err) throw err;
