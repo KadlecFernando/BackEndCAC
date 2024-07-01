@@ -6,6 +6,7 @@ const PORT = process.env.PORT || 8080
 const productosRouter = require('./routes/productos')
 const presupuestosRouter = require('./routes/presupuestos')
 const mensajesRouter = require('./routes/mensajes')
+const tiposPruductosRouter = require ('./routes/tiposProductos')
 
 // app.get('/',(req,res) =>{
 //     console.log('Esto tiene que salir en la consola')
@@ -17,6 +18,7 @@ app.use(express.json());
 app.use('/productos',productosRouter)
 app.use('/presupuestos',presupuestosRouter)
 app.use('/mensajes',mensajesRouter)
+app.use('/tiposproductos',tiposPruductosRouter)
 
 app.listen(PORT,()=>{
     console.log(`Escuchando desde el servidor http://localhost:${PORT}`)
