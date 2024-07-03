@@ -37,12 +37,14 @@ const RestarStockPorProducto = (req,res) =>{
 //----------- Para admin ----------//
 
 const AgregarProducto = (req,res) =>{
+    console.log(req.body)
     const {descripcion,precio,cantidadStock,idTipo} = req.body
     const SQL = "INSERT INTO productos (descripcion,precio,cantidadStock,idTipo)" +
                               " VALUES (?,?,?,?)"
 
     db.query(SQL,[descripcion,precio,cantidadStock,idTipo],(err,result)=>{
         if (err) throw err
+            
 
         res.json({
             message: "Producto agregado.",
