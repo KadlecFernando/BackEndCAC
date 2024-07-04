@@ -16,31 +16,31 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Table structure for table `ventas`
+-- Table structure for table `mensajes`
 --
 
-DROP TABLE IF EXISTS `ventas`;
+DROP TABLE IF EXISTS `mensajes`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `ventas` (
-  `idVenta` int NOT NULL AUTO_INCREMENT,
-  `idProducto` int DEFAULT NULL,
-  `cantidadVendida` int DEFAULT NULL,
-  `Fecha` datetime DEFAULT NULL,
-  PRIMARY KEY (`idVenta`),
-  KEY `idProducto` (`idProducto`),
-  CONSTRAINT `ventas_ibfk_1` FOREIGN KEY (`idProducto`) REFERENCES `productos` (`idProducto`)
+CREATE TABLE `mensajes` (
+  `idMensaje` int NOT NULL AUTO_INCREMENT,
+  `idPersona` int DEFAULT NULL,
+  `mensaje` varchar(500) DEFAULT NULL,
+  `fecha` datetime DEFAULT NULL,
+  PRIMARY KEY (`idMensaje`),
+  KEY `idPersona` (`idPersona`),
+  CONSTRAINT `mensajes_ibfk_1` FOREIGN KEY (`idPersona`) REFERENCES `personas` (`idPersona`)
 ) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `ventas`
+-- Dumping data for table `mensajes`
 --
 
-LOCK TABLES `ventas` WRITE;
-/*!40000 ALTER TABLE `ventas` DISABLE KEYS */;
-INSERT INTO `ventas` VALUES (1,1,3,'2024-07-01 11:52:59'),(3,3,4,'2024-07-01 11:54:48'),(4,1,10,'2024-07-01 11:54:58');
-/*!40000 ALTER TABLE `ventas` ENABLE KEYS */;
+LOCK TABLES `mensajes` WRITE;
+/*!40000 ALTER TABLE `mensajes` DISABLE KEYS */;
+INSERT INTO `mensajes` VALUES (1,1,'Hola, vendes pantuflas?','2024-06-28 17:26:15'),(2,2,'Hola, HAY ALGUIEN?','2024-06-28 17:26:58'),(3,1,'Hola vendes sillas?','2024-06-28 18:22:56'),(4,1,'Quiero saber dónde estás tatuando','2024-07-04 11:34:46');
+/*!40000 ALTER TABLE `mensajes` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
@@ -52,4 +52,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2024-07-01 12:06:07
+-- Dump completed on 2024-07-04 11:50:11
