@@ -1,11 +1,16 @@
+const ocultarDiv = (btn, form)=>{
+    btn.addEventListener('click', () => {
+        form.classList.toggle('hidden')
+    })
+}
+
 document.addEventListener('DOMContentLoaded', () => {
     const mostrarGestionProductoBtn = document.getElementById('mostrarGestionProductoBtn');
     const crearProductoForm = document.getElementById('crearProductoForm');
     //-------------- Mostrar o Ocultar Gestión ---------------//
 
-    mostrarGestionProductoBtn.addEventListener('click', () => {
-        gestionDeProductos.classList.toggle('hidden')
-    })
+    ocultarDiv(mostrarGestionProductoBtn,gestionDeProductos);
+
     //------------------------------------------Funcionalidad de Productos------------------//
 
     //--------------------------------Crear Los Productos-----------------//
