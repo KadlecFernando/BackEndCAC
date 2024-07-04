@@ -3,9 +3,30 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Form CRUD</title>
+    <link rel="stylesheet" href="estilos.css">
 </head>
 <body>
-    <h1>Jelouuuuu</h1>
+    <h1>Gestion De Productos</h1>
+    <button id="mostrarCrearProductosFormBtn"> + Crear Productos</button>
+
+    <form id="crearProductoForm" class="hidden" enctype="multipart/form-data">
+        <h2>Crear Producto</h2>
+        <label for="nombre"> Nombre:</label>
+        <input type="text" id="nombre" name="nombre" required>
+
+        <label for="apellido"> Apellido: </label>
+        <input type="text" id="apellido" name="apellido" required>
+
+        <label for="mail">Email: </label>
+        <input type="email" id="mail" name="mail" required>
+
+
+        <label for="archivo">Archivo: </label>
+        <input type="file" id="archivo" name="archivo">
+
+        <button type="submit"> Crear Usuario</button>
+    </form>
+       
 </body>
 </html>
