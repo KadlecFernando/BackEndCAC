@@ -3,11 +3,9 @@ document.addEventListener('DOMContentLoaded', () => {
     const crearProductoForm = document.getElementById('crearProductoForm');
     //-------------- Mostrar o Ocultar Gestión ---------------//
 
-    /* const hidden = addEventListener('click', () => {
+    mostrarGestionProductoBtn.addEventListener('click', () => {
         gestionDeProductos.classList.toggle('hidden')
     })
-    mostrarGestionProductoBtn(hidden) */
-    // mostrarGestionVentasBtn (hidden) //
     //------------------------------------------Funcionalidad de Productos------------------//
 
     //--------------------------------Crear Los Productos-----------------//
@@ -22,7 +20,7 @@ document.addEventListener('DOMContentLoaded', () => {
             idTipo: formData.get('idTipo'),
             rutaImagen: formData.get('rutaImagen')
         }
-        const response = await fetch('/producto', {
+        const response = await fetch('/productos', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
