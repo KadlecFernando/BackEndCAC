@@ -27,16 +27,9 @@ app.use('/productos',productosRouter)
 app.use('/presupuestos',presupuestosRouter)
 app.use('/mensajes',mensajesRouter)
 app.use('/ventas',ventasRouter)
-<<<<<<< HEAD
-app.use('/tiposProductos', tiposRouter)
-=======
 app.use('/tiposProductos', tiposRouter)
 app.use('/personas', personasRouter)
 
- /* express.static(path.join(__dirname,'public')) hace que apenas abre la pagina
-    el get lo haga con todo lo que está
- /* en public, es decir, index.html en este caso*/
->>>>>>> Loa
 
 app.use(express.static(path.join(__dirname,'public')))
 
