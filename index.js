@@ -25,7 +25,7 @@ app.use('/productos',productosRouter)
 app.use('/presupuestos',presupuestosRouter)
 app.use('/mensajes',mensajesRouter)
 app.use('/ventas',ventasRouter)
-app.use('/tiposroductos', tiposRouter)
+app.use('/tiposproductos', tiposRouter)
 
 app.use(express.static(path.join(__dirname,'public')))
 

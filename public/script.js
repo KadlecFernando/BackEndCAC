@@ -22,7 +22,7 @@ document.addEventListener('DOMContentLoaded', () => {
             idTipo: formData.get('idTipo'),
             rutaImagen: formData.get('rutaImagen')
         }
-        const response = await fetch('/producto', {
+        const response = await fetch('/productos', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
