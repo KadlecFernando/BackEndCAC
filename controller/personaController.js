@@ -5,7 +5,7 @@ const ObtenerPersona = (req,res) =>{
     const SQL = "SELECT idPersona FROM personas WHERE nombre = ? AND apellido = ? AND mail = ?"
     db.query(SQL,[nombre,apellido,mail],(err,result) =>{
         if (err) throw err
-        alert(`${result}`)
+        
         res.json(result)
     }) 
 }
