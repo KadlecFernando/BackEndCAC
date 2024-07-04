@@ -16,6 +16,8 @@ const presupuestosRouter = require('./routes/presupuestos')
 const mensajesRouter = require('./routes/mensajes')
 const ventasRouter = require('./routes/ventas')
 const tiposRouter = require('./routes/tiposProductos')
+const personasRouter = require('./routes/personas')
+
 // app.get('/',(req,res) =>{
 //     console.log('Esto tiene que salir en la consola')
 //     res.send('Hola estamos probando el servidor con nodeman')
@@ -25,7 +27,16 @@ app.use('/productos',productosRouter)
 app.use('/presupuestos',presupuestosRouter)
 app.use('/mensajes',mensajesRouter)
 app.use('/ventas',ventasRouter)
-app.use('/tiposproductos', tiposRouter)
+<<<<<<< HEAD
+app.use('/tiposProductos', tiposRouter)
+=======
+app.use('/tiposProductos', tiposRouter)
+app.use('/personas', personasRouter)
+
+ /* express.static(path.join(__dirname,'public')) hace que apenas abre la pagina
+    el get lo haga con todo lo que está
+ /* en public, es decir, index.html en este caso*/
+>>>>>>> Loa
 
 app.use(express.static(path.join(__dirname,'public')))
 

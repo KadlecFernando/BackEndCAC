@@ -4,13 +4,13 @@ const db = require('../database/db')
 
 
 const AgregarPresupuesto = (req,res) =>{
-    const {idPersona,estilo,referencia,referenciaIMG,zonaCuerpo} = req.body
+    const {idPersona,estilo,referencia,referenciaIMG,zonaCuerpo,tamanioCM} = req.body
 
     //FALTA REFERENCIAIMG CON MULTER
 
-    const SQL = "INSERT INTO presupuestos(idPersona,estilo,referencia,zonaCuerpo,fecha) VALUES (?,?,?,?,now())"
+    const SQL = "INSERT INTO presupuestos(idPersona,estilo,referencia,zonaCuerpo,tamanioCM,fecha) VALUES (?,?,?,?,?,now())"
 
-    db.query(SQL,[idPersona,estilo,referencia,zonaCuerpo],(err,result)=>{
+    db.query(SQL,[idPersona,estilo,referencia,zonaCuerpo,tamanioCM],(err,result)=>{
         if (err) throw err
 
         res.json({
@@ -46,7 +46,7 @@ const ObtenerPresupuestosSemanaAnterior = (req,res) =>{
 
 const ObtenerPresupuestosDetalle = (req,res) =>{
 
-    const SQL = "SELECT pre.estilo, pre.referencia, pre.zonaCuerpo, pre.fecha, per.nombre, per.apellido, per.mail, per.whatsapp" +
+    const SQL = "SELECT pre.estilo, pre.referencia, pre.zonaCuerpo, pre.tamanioCM, pre.fecha, per.nombre, per.apellido, per.mail, per.whatsapp" +
                 "  FROM presupuestos pre" +
                 "       LEFT JOIN personas per ON per.idPersona = pre.idPersona" +
                 " WHERE per.idPersona = 1;"
