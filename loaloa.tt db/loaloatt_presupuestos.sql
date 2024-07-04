@@ -16,32 +16,35 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Table structure for table `productos`
+-- Table structure for table `presupuestos`
 --
 
-DROP TABLE IF EXISTS `productos`;
+DROP TABLE IF EXISTS `presupuestos`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `productos` (
-  `idProducto` int NOT NULL AUTO_INCREMENT,
-  `descripcion` varchar(50) DEFAULT NULL,
-  `precio` decimal(18,0) DEFAULT NULL,
-  `cantidadStock` int DEFAULT NULL,
-  `idTipo` int DEFAULT NULL,
-  PRIMARY KEY (`idProducto`),
-  KEY `idTipo` (`idTipo`),
-  CONSTRAINT `productos_ibfk_1` FOREIGN KEY (`idTipo`) REFERENCES `tiposproductos` (`idTipo`)
+CREATE TABLE `presupuestos` (
+  `idPresupuesto` int NOT NULL AUTO_INCREMENT,
+  `idPersona` int DEFAULT NULL,
+  `estilo` varchar(50) DEFAULT NULL,
+  `referencia` varchar(100) DEFAULT NULL,
+  `referenciaIMG` mediumblob,
+  `zonaCuerpo` varchar(50) DEFAULT NULL,
+  `tamanioCM` decimal(6,0) DEFAULT NULL,
+  `fecha` datetime DEFAULT NULL,
+  PRIMARY KEY (`idPresupuesto`),
+  KEY `idPersona` (`idPersona`),
+  CONSTRAINT `presupuestos_ibfk_1` FOREIGN KEY (`idPersona`) REFERENCES `personas` (`idPersona`)
 ) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `productos`
+-- Dumping data for table `presupuestos`
 --
 
-LOCK TABLES `productos` WRITE;
-/*!40000 ALTER TABLE `productos` DISABLE KEYS */;
-INSERT INTO `productos` VALUES (1,'Agujas 3RL',1000,10,1),(3,'Tinta Negra',5000,10,1);
-/*!40000 ALTER TABLE `productos` ENABLE KEYS */;
+LOCK TABLES `presupuestos` WRITE;
+/*!40000 ALTER TABLE `presupuestos` DISABLE KEYS */;
+INSERT INTO `presupuestos` VALUES (1,2,'fine line','Me gustaría una flor delicada.','','brazo',6,'2024-07-04 11:44:12'),(2,1,'fine line','Me gustaría una CALAVERA','','brazo',10,'2024-07-04 11:44:28'),(3,1,'black','Cuanto me sale un infinito','','brazo',3,'2024-07-04 11:44:57');
+/*!40000 ALTER TABLE `presupuestos` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
@@ -53,4 +56,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2024-07-01 12:06:07
+-- Dump completed on 2024-07-04 11:50:10

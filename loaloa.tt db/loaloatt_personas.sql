@@ -16,31 +16,30 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Table structure for table `mensajes`
+-- Table structure for table `personas`
 --
 
-DROP TABLE IF EXISTS `mensajes`;
+DROP TABLE IF EXISTS `personas`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `mensajes` (
-  `idMensaje` int NOT NULL AUTO_INCREMENT,
-  `idPersona` int DEFAULT NULL,
-  `mensaje` varchar(500) DEFAULT NULL,
-  `fecha` datetime DEFAULT NULL,
-  PRIMARY KEY (`idMensaje`),
-  KEY `idPersona` (`idPersona`),
-  CONSTRAINT `mensajes_ibfk_1` FOREIGN KEY (`idPersona`) REFERENCES `personas` (`idPersona`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+CREATE TABLE `personas` (
+  `idPersona` int NOT NULL AUTO_INCREMENT,
+  `nombre` varchar(40) NOT NULL,
+  `apellido` varchar(40) NOT NULL,
+  `mail` varchar(80) DEFAULT NULL,
+  `whatsapp` varchar(30) DEFAULT NULL,
+  PRIMARY KEY (`idPersona`)
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `mensajes`
+-- Dumping data for table `personas`
 --
 
-LOCK TABLES `mensajes` WRITE;
-/*!40000 ALTER TABLE `mensajes` DISABLE KEYS */;
-INSERT INTO `mensajes` VALUES (1,1,'Hola, vendes pantuflas?','2024-06-28 17:26:15'),(2,2,'Hola, HAY ALGUIEN?','2024-06-28 17:26:58'),(3,1,'Hola vendes sillas?','2024-06-28 18:22:56');
-/*!40000 ALTER TABLE `mensajes` ENABLE KEYS */;
+LOCK TABLES `personas` WRITE;
+/*!40000 ALTER TABLE `personas` DISABLE KEYS */;
+INSERT INTO `personas` VALUES (1,'Billy','Joly','tinytiny@gmail.com','1147854598'),(2,'Fernando','Kadlec','ferfacherito@gmail.com','1147854577'),(3,'Loana','Rubio','loanarubio@gmail.com','1145784587'),(4,'Jose','Gonzales','joseg@gmail.com','1145884587');
+/*!40000 ALTER TABLE `personas` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
@@ -52,4 +51,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2024-07-01 12:06:07
+-- Dump completed on 2024-07-04 11:50:11

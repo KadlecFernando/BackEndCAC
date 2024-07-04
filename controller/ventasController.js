@@ -4,7 +4,7 @@ const db = require('../database/db')
 
 const AgregarVenta = (req, res) => {
     const { idProducto, cantidadVendida } = req.body;
-    const SQL = "INSERT INTO ventas (idProducto, cantidadVendida,Fecha) VALUES (?, ?, NOW())";
+    const SQL = "INSERT INTO ventas (idProducto, cantidadVendida ,Fecha) VALUES (?, ?, NOW())";
 
     db.query(SQL, [idProducto, cantidadVendida], (err, result) => {
         if (err) throw err;

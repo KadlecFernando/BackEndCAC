@@ -1,0 +1,75 @@
+CREATE DATABASE LoaLoaTT;
+
+CREATE TABLE personas (
+idPersona INT AUTO_INCREMENT PRIMARY KEY,
+nombre VARCHAR (40) NOT NULL,
+apellido VARCHAR (40) NOT NULL,
+mail VARCHAR (80),
+whatsapp VARCHAR (30))
+
+CREATE TABLE mensajes (
+idMensaje INT AUTO_INCREMENT,
+idPersona INT, 
+mensaje VARCHAR(500),
+fecha DATETIME,
+PRIMARY KEY (idMensaje),
+FOREIGN KEY (idPersona) REFERENCES personas(idPersona)
+)
+
+CREATE TABLE presupuestos (
+idPresupuesto INT AUTO_INCREMENT,
+idPersona INT,
+estilo VARCHAR (50),
+referencia VARCHAR(100),
+referenciaIMG MEDIUMBLOB,
+zonaCuerpo VARCHAR(50),
+tamanioCM NUMERIC (6.2),
+fecha DATETIME,
+PRIMARY KEY (idPresupuesto),
+FOREIGN KEY (idPersona) REFERENCES personas(idPersona)
+);
+
+CREATE TABLE tiposProductos (
+idTipo INT AUTO_INCREMENT,
+descripcion VARCHAR(50),
+ PRIMARY KEY (idTipo)
+ );
+
+CREATE TABLE productos(
+idProducto INT AUTO_INCREMENT ,
+descripcion VARCHAR(50),
+precio NUMERIC (18.2),
+cantidadStock INT,
+idTipo INT ,
+rutaImagen VARCHAR(500),
+PRIMARY KEY (idProducto),
+FOREIGN KEY (idTipo) REFERENCES tiposProductos (idTipo)
+);
+
+CREATE TABLE ventas(
+idVenta INT AUTO_INCREMENT,
+idProducto INT,
+cantidadVendida INT,
+Fecha DATETIME,
+PRIMARY KEY (idVenta),
+FOREIGN KEY (idProducto) REFERENCES productos (idProducto));
+
+
+------------------
+
+SELECT men.mensaje,
+       per.nombre,
+       per.apellido,
+       per.mail
+  FROM loaloatt.mensajes men
+	   LEFT JOIN loaloatt.personas per ON per.idPersona = men.idPersona
+ WHERE per.idPersona = 1;
+
+---------------
+//Cuando es formato solo fecha se usa CURDATE(), cuando tiene fecha y hora se usa NOW()
+
+SELECT * 
+  FROM mensajes 
+ WHERE fecha BETWEEN DATE_SUB(NOW(), INTERVAL 7 DAY) AND NOW();
+ 
+
