@@ -40,11 +40,7 @@ const AgregarProducto = (req,res) =>{
     console.log(req.body)
     const {descripcion,precio,cantidadStock,idTipo,rutaImagen} = req.body
     const SQL = "INSERT INTO productos (descripcion,precio,cantidadStock,idTipo,rutaImagen)" +
-<<<<<<< HEAD
-                              " VALUES (?,?,?,?.?)"
-=======
                               " VALUES (?,?,?,?,?)"
->>>>>>> Loa
 
     db.query(SQL,[descripcion,precio,cantidadStock,idTipo,rutaImagen],(err,result)=>{
         if (err) throw err
