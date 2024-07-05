@@ -1,6 +1,8 @@
 require('dotenv').config();
 const mySql = require('mysql2');
 
+// donde creamos la base en la nube www.freesqldatabase.com
+
 const connection = mySql.createConnection(
     {
         // host : 'localhost',
