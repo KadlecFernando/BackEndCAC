@@ -7,7 +7,7 @@ app.use(express.json());
 
 /*CORS nos permite conectar el back y el front en nuestro caso que estan en repos distintos*/
  const corsOptions = {
-    origin: 'http://localhost:3000',
+    origin: 'https://proyectocacgrupo13.netlify.app/',
     methods: ['GET', 'POST'], // Métodos permitidos
     allowedHeaders: ['Content-Type', 'Authorization'], // Encabezados permitidos
  };
