@@ -7,6 +7,7 @@ const productController = require('../controller/productController')
 
 router.get('/',productController.ObtenerTodosLosProductos)
 router.get('/:id',productController.ObtenerProductoPorId)
+router.get('/productostipo/:idTipo',productController.ObtenerProductoPorTipo)
 router.put('/ventas/:id',productController.RestarStockPorProducto)
 
 //----------------------Para programador--------------------------------//

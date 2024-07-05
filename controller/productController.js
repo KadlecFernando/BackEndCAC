@@ -11,6 +11,18 @@ const ObtenerTodosLosProductos = (req,res) =>{
     }) 
 }
 
+const ObtenerProductoPorTipo = (req,res) =>{
+    
+    const {idTipo} = req.params
+    const SQL = "SELECT * FROM productos WHERE idTipo = ?"
+    db.query(SQL,[idTipo],(err,result) =>{
+        if (err) throw err
+
+        res.json(result)
+    }) 
+       
+}
+
 const ObtenerProductoPorId = (req,res) =>{
     const {id} = req.params
     const SQL = "SELECT * FROM productos WHERE idProducto = ?"
@@ -81,6 +93,7 @@ const ActualizarStockPorProducto = (req,res) =>{
 module.exports = {
     ObtenerTodosLosProductos,
     ObtenerProductoPorId,
+    ObtenerProductoPorTipo,
     RestarStockPorProducto,
     AgregarProducto,
     EliminarProducto,
