@@ -1,4 +1,6 @@
 body {
+    display: flex;
+    flex-direction: column;
     font-family: Arial, sans-serif;
     background-color: #f4f4f4;
     margin: 0;
@@ -6,8 +8,11 @@ body {
 }
 
 
-h1, h2 {
-    color: #333;
+h2 {
+    margin-top: 2%;
+    margin-bottom: 2%;
+    text-align: center;
+    color: #000000;
 }
 
 
@@ -22,6 +27,9 @@ form {
     margin-bottom: 20px;
     border-radius: 5px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 60%;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 
@@ -35,7 +43,7 @@ label {
 input[type="text"],
 input[type="email"],
 input[type="number"] {
-    width: 100%;
+    width: 95%;
     padding: 8px;
     margin-bottom: 10px;
     border: 1px solid #ccc;
@@ -44,8 +52,9 @@ input[type="number"] {
 
 
 button {
-    background-color: #28a745;
-    color: #fff;
+    width: 15%;
+    background-color: #d6c50d;
+    color: black;
     border: none;
     padding: 10px 15px;
     text-align: center;
@@ -54,12 +63,12 @@ button {
     font-size: 16px;
     margin: 4px 2px;
     cursor: pointer;
-    border-radius: 4px;
+    border-radius: 6px;
 }
 
 
 button:hover {
-    background-color: #218838;
+    background-color: goldenrod;
 }
 
 
@@ -104,4 +113,38 @@ li .delete {
 
 li .delete:hover {
     background-color: #c82333;
+}
+
+form button[type="submit"] {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#idStock,
+#cantidadASumar,
+#idProducto {
+    width: 95%;
+    display: flex;
+    margin-bottom: 10px;
+}
+#gestionTiposProductos,
+#gestionDeProductos {
+    background: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+}
+#eliminarTipoProductoPorIdBtn,
+#listarTiposProductosBtn,
+#agregarTipoProductoBtn,
+#listarProductosbtn,
+#actualizarStockPorProducto,
+#eliminarProductoPorIdBtn {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
 }

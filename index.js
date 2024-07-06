@@ -37,7 +37,7 @@ app.use('/productos',productosRouter)
 app.use('/presupuestos',presupuestosRouter)
 app.use('/mensajes',mensajesRouter)
 app.use('/ventas',ventasRouter)
-app.use('/tiposProductos', tiposRouter)
+app.use('/tiposproductos', tiposRouter)
 app.use('/personas', personasRouter)
 
  /* express.static(path.join(__dirname,'public')) hace que apenas abre la pagina

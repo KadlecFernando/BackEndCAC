@@ -7,10 +7,13 @@ const ocultarDiv = (btn, form)=>{
 document.addEventListener('DOMContentLoaded', () => {
     const mostrarGestionProductoBtn = document.getElementById('mostrarGestionProductoBtn');
     const crearProductoForm = document.getElementById('crearProductoForm');
+
+    const mostrarGestionTiposProductosBtn = document.getElementById('mostrarGestionTiposProductosBtn');
+    const gestionTiposProductos = document.getElementById('gestionTiposProductos');
     //-------------- Mostrar o Ocultar Gestión ---------------//
 
     ocultarDiv(mostrarGestionProductoBtn,gestionDeProductos);
-
+    ocultarDiv(mostrarGestionTiposProductosBtn,gestionTiposProductos);
     //------------------------------------------Funcionalidad de Productos------------------//
 
     //--------------------------------Crear Los Productos-----------------//
@@ -36,19 +39,7 @@ document.addEventListener('DOMContentLoaded', () => {
         alert("Producto Creado Con Exito")
         //crearProductoForm.reset ()//        
     })
-
-
-
-
-
-
-
-
-
-
-
-
-
 })
+
 
 
