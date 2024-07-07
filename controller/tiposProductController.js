@@ -1,7 +1,7 @@
 const db = require('../database/db')
 
 const ObtenerTiposProductos = (req,res) =>{
-    const SQL = "SELECT * FROM tiposproductos"
+    const SQL = "SELECT * FROM tiposProductos"
     db.query(SQL, (err,result) =>{
         if (err) throw err
 
@@ -11,7 +11,7 @@ const ObtenerTiposProductos = (req,res) =>{
 
 const ObtenerTiposProductosPorId = (req,res) =>{
     const {id} = req.params
-    const SQL = "SELECT * FROM tiposproductos WHERE idTipo = ?"
+    const SQL = "SELECT * FROM tiposProductos WHERE idTipo = ?"
     db.query(SQL,[id],(err,result) =>{
         if (err) throw err
 
@@ -21,7 +21,7 @@ const ObtenerTiposProductosPorId = (req,res) =>{
 
 const AgregarTiposProductos = (req,res) =>{
     const {descripcion} = req.body
-    const SQL = "INSERT INTO tiposproductos (descripcion)" +
+    const SQL = "INSERT INTO tiposProductos (descripcion)" +
                               " VALUES (?)"
 
     db.query(SQL,[descripcion],(err,result)=>{
@@ -36,7 +36,7 @@ const AgregarTiposProductos = (req,res) =>{
 
 const EliminarTiposProductos = (req,res) =>{
     const {id} = req.params
-    const SQL = "DELETE FROM tiposproductos WHERE idTipo = ?"
+    const SQL = "DELETE FROM tiposProductos WHERE idTipo = ?"
     db.query(SQL,[id],(err,result) =>{
         if (err) throw err
 

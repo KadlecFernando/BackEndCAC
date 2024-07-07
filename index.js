@@ -7,7 +7,7 @@ app.use(express.json());
 
 /*CORS nos permite conectar el back y el front en nuestro caso que estan en repos distintos*/
  const corsOptions = {
-    origin: 'http://localhost:3000',
+    origin: 'https://proyectocacgrupo13.netlify.app/',
     methods: ['GET', 'POST'], // Métodos permitidos
     allowedHeaders: ['Content-Type', 'Authorization'], // Encabezados permitidos
  };
@@ -40,9 +40,6 @@ app.use('/ventas',ventasRouter)
 app.use('/tiposproductos', tiposRouter)
 app.use('/personas', personasRouter)
 
- /* express.static(path.join(__dirname,'public')) hace que apenas abre la pagina
-    el get lo haga con todo lo que está
- /* en public, es decir, index.html en este caso*/
 
 app.use(express.static(path.join(__dirname,'public')))
 

@@ -32,50 +32,24 @@
 
             <button type="submit"> Crear Producto</button>
         </form>
+
         <h2>Lista de Productos</h2>
-        <form>
-            <button id="listarProductosbtn">Listar Todos Los Productos</button>
-            <ul id="listarProductos">
-            </ul>
-        </form>
+        <button id="listarProductosbtn">Listar Todos Los Productos</button>
+        <ul id="listaProductos">
+        </ul>
+        
         <h2>Actualizar Stock</h2>
-        <form>
-            <label for="idStock">ID:</label>
-            <input type="number" id="idStock" name="idStock">
-            <label for="cantidadASumar">Cantidad Agregada</label>
-            <input type="number" id="cantidadASumar" name="cantidadASumar">
-            <button id="actualizarStockPorProducto">Actualizar Stock</button>
-        </form>
+        
+        <label for="idStock">ID:</label>
+        <input type="number" id="idStock" name="idStock">
+        <label for="cantidadASumar">Cantidad Agregada</label>
+        <input type="number" id="cantidadASumar" name="cantidadASumar">
+        <button id="actualizarStockPorProductoBtn">Actualizar Stock</button>
+        
         <h2>Eliminar Producto</h2>
-        <form>
-            <label for="idProducto">ID:</label>
-            <input type="number" id="idProducto" name="idProducto">
-            <button id="eliminarProductoPorIdBtn">Eliminar Producto Definitivamente</button>
-        </form>
-    </div>
-    <button id="mostrarGestionTiposProductosBtn"> + Gestion Tipos de Productos</button>
-    <div id="gestionTiposProductos" class="hidden">
-        <h2>Crear Tipos de Productos</h2>
-        <form>
-            <label for="descripcion">Descripcion:</label>
-            <input type="text" id="descripcion" name="descripcion">
-            <button id="agregarTipoProductoBtn">Agregar Tipo de Producto</button>
-        </form>
-        <h2>Listar Tipos de Productos</h2>
-        <form>
-            <button id="listarTiposProductosBtn">Listar Todos Los Tipos de Productos</button>
-            <ul id="listarTiposProductos">
-            </ul>
-        </form>
-        <h2>Eliminar Tipo de Producto</h2>
-        <form>
-            <label for="idTipo">ID:</label>
-            <input type="number" id="idTipo" name="idTipo">
-            <button id="eliminarTipoProductoPorIdBtn">Eliminar Tipo de Producto Definitivamente</button>
-        </form>
-
-
-
+        <label for="idProducto">ID:</label>
+        <input type="number" id="idProducto" name="idProducto">
+        <button id="eliminarProductoPorId">Eliminar Producto Definitivamente</button>
     </div>
     <script src="script.js"></script>
 </body>
