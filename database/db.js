@@ -5,15 +5,16 @@ const mySql = require('mysql2');
 
 const connection = mySql.createConnection(
     {
-        // host : 'localhost',
-        // user: 'root',            esto ahora se requiere de dotenv
-        // password : '1106',
-        // database: 'loaloatt'
+        //esto ahora se requiere de dotenv
+        host : 'localhost',
+        user: 'root',            
+        password : '19042$',
+        database: 'loaloatt'
 
-        host : process.env.DB_HOST,
-        user: process.env.DB_USER,        
-        password : process.env.DB_PASSWORD,
-        database: process.env.DB_NAME
+        // host : process.env.DB_HOST,
+        // user: process.env.DB_USER,        
+        // password : process.env.DB_PASSWORD,
+        // database: process.env.DB_NAME
 
     });
 

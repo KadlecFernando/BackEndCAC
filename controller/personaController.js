@@ -2,10 +2,11 @@ const db = require('../database/db')
 
 const ObtenerPersona = (req,res) =>{
     const {nombre,apellido,mail} = req.params
-    const SQL = "SELECT idPersona FROM personas WHERE nombre = ? AND apellido = ? AND mail = ?"
+    
+    const SQL = "SELECT idPersona FROM personas WHERE nombre = ? AND apellido = ? AND mail = ? LIMIT 1"
+
     db.query(SQL,[nombre,apellido,mail],(err,result) =>{
         if (err) throw err
-        
         res.json(result)
     }) 
 }

@@ -5,14 +5,14 @@ const path = require('path')
 
 app.use(express.json());
 
-/*CORS nos permite conectar el back y el front en nuestro caso que estan en repos distintos*/
- const corsOptions = {
-    origin: 'https://proyectocacgrupo13.netlify.app/',
-    methods: ['GET', 'POST'], // Métodos permitidos
-    allowedHeaders: ['Content-Type', 'Authorization'], // Encabezados permitidos
- };
+// /*CORS nos permite conectar el back y el front en nuestro caso que estan en repos distintos*/
+//  const corsOptions = {
+//     origin: 'http://localhost:3000',
+//     methods: ['GET', 'POST'], // Métodos permitidos
+//     allowedHeaders: ['Content-Type', 'Authorization'], // Encabezados permitidos
+//  };
 
-app.use(cors());
+// app.use(cors());
 
 app.use((req, res, next) => {
     // console.log('Body recibido:', req.body);
