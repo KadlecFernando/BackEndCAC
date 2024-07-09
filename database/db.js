@@ -12,11 +12,21 @@ const connection = mySql.createConnection(
      password : '19042$',
      database: 'loaloatt'
 
+<<<<<<< Updated upstream
         // host : process.env.DB_HOST,
         // user: process.env.DB_USER,        
         // password : process.env.DB_PASSWORD,
         // database: process.env.DB_NAME,
         // connectTimeout: 10000
+=======
+    //Y HABRIA QUE CAMBIAR LAS RUTAS DE FORMULARIOS Y TIENDA A LOCALHOST EN VEZ DE https://back-end-cac.vercel.app
+
+        host : process.env.DB_HOST,
+        user: process.env.DB_USER,        
+        password : process.env.DB_PASSWORD,
+        database: process.env.DB_NAME,
+        connectTimeout: 10000
+>>>>>>> Stashed changes
 
     });
 
