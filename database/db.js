@@ -7,16 +7,16 @@ const connection = mySql.createConnection(
     {
         // esto ahora se requiere de dotenv
 
-     host : 'localhost',
-     user: 'root',           
-     password : '19042$',
-     database: 'loaloatt'
+    //  host : 'localhost',
+    //  user: 'root',           
+    //  password : '19042$',
+    //  database: 'loaloatt'
 
-        // host : process.env.DB_HOST,
-        // user: process.env.DB_USER,        
-        // password : process.env.DB_PASSWORD,
-        // database: process.env.DB_NAME,
-        // connectTimeout: 10000
+        host : process.env.DB_HOST,
+        user: process.env.DB_USER,        
+        password : process.env.DB_PASSWORD,
+        database: process.env.DB_NAME,
+        connectTimeout: 10000
 
     });
 
