@@ -5,7 +5,7 @@ const db = require('../database/db')
 const AgregarMensaje = (req,res) =>{
     const {idPersona,mensaje} = req.body
     const SQL = "INSERT INTO mensajes(idPersona,mensaje,fecha)" +
-                              " VALUES (?,?,NOW())"
+                    " VALUES (?,?,NOW())"
 
     db.query(SQL,[idPersona,mensaje],(err,result)=>{
         if (err) throw err
